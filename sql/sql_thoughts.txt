@@ -1,0 +1,15 @@
+-- 使用するDB
+use book_manager;
+
+-- 感想
+create table thoughts (
+	thought_id integer auto_increment,
+	thought_text varchar(2000) not null,
+	thought_book_id integer not null,
+	primary key (thought_id),
+	foreign key (thought_id) reference books (book_id)
+);
+
+-- 感想登録
+insert into thoughts (thought_text, thought_book_id)
+values ('SQLの基礎からDB設計まで網羅的に対応していて良い', 1); 

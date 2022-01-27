@@ -1,0 +1,28 @@
+-- 使用するDB
+use book_manager;
+
+-- 本のカテゴリー
+drop table if exists categories cascade;
+
+create table categories (
+	category_id integer auto_increment,
+	category_name varchar(20) not null unique,
+	primary key (category_id)
+);
+
+-- カテゴリー登録
+insert into categories (category_name)
+values ('雑誌'),
+('コミック'),
+('ビジネス・経済'),
+('アート・建築・デザイン'),
+('IT・コンピュータ'),
+('文庫'),
+('単行本'),
+('文芸書'),
+('エッセイ・随筆'),
+('趣味・実用'),
+('暮らし・健康'),
+('旅行・アウトドア'),
+('児童書'),
+('参考書');

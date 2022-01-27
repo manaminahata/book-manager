@@ -1,0 +1,22 @@
+-- 使用するDB
+use book_manager;
+
+-- 登録書籍情報
+drop table if exists books cascade;
+
+create table books (
+	book_id integer auto_increment,
+	book_name varchar(30) not null,
+	book_category integer not null,
+	book_price integer, -- integer型のため「未入力」というdefault値が入らなかったので調整する
+	book_page integer not null,
+	book_current_page integer default 0,
+	book_thoughts integer,
+	book_image text,
+	primary key (book_id),
+	foreign key (book_category) references categories (category_id)
+);
+
+-- 書籍登録
+insert into books (book_name, book_category, book_price, book_page, book_image)
+values ('スッキリわかるSQL入門', 14, 2800, 487, 'スッキリわかるSQL入門.png');

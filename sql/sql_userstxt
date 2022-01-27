@@ -1,0 +1,23 @@
+-- 使用するDB 
+use book_manager;
+
+-- ユーザー情報 
+drop table if exists users cascade;
+
+create table users (
+	user_id integer auto_increment,
+	user_name varchar(20) not null,
+	user_email varchar(100) not null unique,
+	user_password varchar(16) not null,
+	user_icon text,
+	user_books_id integer,
+	primary key (user_id),
+	foreign key (user_books_id) references books (book_id)
+);
+
+-- ユーザー登録
+insert into users (user_name, user_email, user_password, user_icon)
+values ('山田太郎', 'yamadatarou@sample.com', 'yamada123', '山田太郎.png');
+
+
+
