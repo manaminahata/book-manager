@@ -11,6 +11,7 @@ create table users (
 	user_password varchar(16) not null,
 	user_icon text,
 	user_books_id integer,
+	deleted boolean NOT NULL default false,
 	primary key (user_id),
 	foreign key (user_books_id) references books (book_id)
 );
