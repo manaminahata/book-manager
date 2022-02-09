@@ -1,0 +1,9 @@
+@charset "UTF-8";
+body {
+  background-image: url("file:///Users/manami/workspace/book-manager/src/main/resources/static/css/login/%E3%83%AD%E3%82%B0%E3%82%A4%E3%83%B3%E7%94%BB%E9%9D%A2.jpg");
+  background-size: cover;
+}
+img {
+  width: 720px;
+  height: 300px;
+}
