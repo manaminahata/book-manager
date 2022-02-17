@@ -13,6 +13,7 @@ create table books (
 	book_current_page integer default 0,
 	book_thoughts integer,
 	book_image text,
+	deleted boolean NOT NULL default false,
 	primary key (book_id),
 	foreign key (book_category) references categories (category_id)
 );

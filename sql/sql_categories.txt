@@ -7,6 +7,7 @@ drop table if exists categories cascade;
 create table categories (
 	category_id integer auto_increment,
 	category_name varchar(20) not null unique,
+	deleted boolean NOT NULL default false,
 	primary key (category_id)
 );
 
