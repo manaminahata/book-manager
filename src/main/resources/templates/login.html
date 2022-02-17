@@ -11,7 +11,7 @@
 html,body {  height: 100%;}body {  display: flex;  align-items: center;  padding-top: 40px;  padding-bottom: 40px;  background-color: #f5f5f5;}.form-signin {  width: 100%;  max-width: 330px;  padding: 15px;  margin: auto;}.form-signin .checkbox {  font-weight: 400;}.form-signin .form-floating:focus-within {  z-index: 2;}.form-signin input[type="email"] {  margin-bottom: -1px;  border-bottom-right-radius: 0;  border-bottom-left-radius: 0;}.form-signin input[type="password"] {  margin-bottom: 10px;  border-top-left-radius: 0;  border-top-right-radius: 0;}
 </style>
 <!-- 背景設定用 CSS -->
-<link href="../static/css/login/login.css" rel="stylesheet">
+<link href="../static/css/login/login.css" th:href="@{/css/login/login.css}" rel="stylesheet">
 
 </head>
 
@@ -24,10 +24,12 @@ html,body {  height: 100%;}body {  display: flex;  align-items: center;  padding
       <div class="form-floating">
         <input name="userEmail" type="email" class="form-control" id="floatingInput" th:value="*{userEmail}">
         <label for="floatingInput" class="text-muted">Email</label>
+        <!-- <label th:errors="*{userEmail}" class="control-label" style="color:red" for="imputError">ERROR UserEmail</label> -->
       </div>
       <div class="form-floating">
         <input name="userPassword" type="password" class="form-control" id="floatingPassword" th:value="*{userPassword}">
         <label for="floatingPassword" class="text-muted">Password</label>
+        <!-- <label th:errors="*{userPassword}" class="control-label" style="color:red" for="imputError">ERROR UserPassword</label> -->
       </div>
 
 <!--       「パスワードを忘れた方へ」を追加する
