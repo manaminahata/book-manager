@@ -1,0 +1,9 @@
+@charset "UTF-8";
+body {
+  background-image: url("ログイン画面.jpg");
+  background-size: cover;
+}
+img {
+  width: 720px;
+  height: 300px;
+}
