@@ -19,6 +19,9 @@ public interface UserMapper {
 	/** ユーザー情報の全件取得 */
 	public List<User> findAll();
 	
+	/** idが一致するユーザーの取得 */
+	public User findByOne(@Param("id") int id);
+	
 	/** メールアドレスとパスワードが一致するユーザー情報の取得 */
 	public User findByUser(@Param("email") String email, @Param("password") String password);
 	
