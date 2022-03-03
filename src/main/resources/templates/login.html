@@ -17,16 +17,16 @@ html,body {  height: 100%;}body {  display: flex;  align-items: center;  padding
 
 <body class="text-center">
   <main class="form-signin">
-    <form method="post" th:action="@{/login}" th:object="${userLoginForm}">
-      <img class="mb w-100 h-100" src="img/ロゴ_背景透過バージョン.png" alt="YONDA?">
+    <form method="post" th:action="@{/yonda/login-result}" th:object="${userLoginForm}">
+      <img class="mb w-100 h-100" src="/img/yonda-logo.png" alt="YONDA?">
       <h1 class="h3 mb-3 fw-normal text-muted">ログイン</h1>
       <label th:if="${errorMessage}" class="control-label" style="color:red" for="inputError" th:text="${errorMessage}">ERROR</label>
       <div class="form-floating">
-        <input name="userEmail" type="email" class="form-control" id="floatingInput" th:value="*{userEmail}">
+        <input name="userEmail" type="email" class="form-control" id="floatingInput" th:field="*{userEmail}">
         <label for="floatingInput inputEmail" class="text-muted">Email</label>
       </div>
       <div class="form-floating">
-        <input name="userPassword" type="password" class="form-control" id="floatingPassword" th:value="*{userPassword}">
+        <input name="userPassword" type="password" class="form-control" id="floatingPassword" th:field="*{userPassword}">
         <label for="floatingPassword inputPassword" class="text-muted">Password</label>
       </div>
 

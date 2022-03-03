@@ -20,6 +20,35 @@
 		FROM
 			users;
 	</select>
+	<!-- idが一致するユーザー情報の取得 -->
+	<select id="findByOne" resultMap="userMapper">
+		SELECT
+			u.user_id,
+			u.user_name,
+			u.user_email,
+			u.user_password,
+			u.user_icon,
+			b.book_id,
+			b.book_name,
+			b.book_category,
+			b.book_price,
+			b.book_page,
+			b.book_current_page,
+			b.book_thoughts,
+			b.book_image
+		FROM
+			users AS u
+		LEFT JOIN
+			books AS b
+		ON
+			u.user_id = b.book_id
+		WHERE
+			u.user_id = #{id}
+		AND
+			u.deleted = false
+		ORDER BY
+			b.book_id;
+	</select>
 	<!-- メールアドレスとパスワードが一致するユーザー情報の取得 -->
 	<select id="findByUser" resultMap="userMapper">
 		SELECT
