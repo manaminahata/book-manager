@@ -1,0 +1,9 @@
+@charset "UTF-8";
+body {
+  background-image: url("/img/login-page.jpg");
+  background-size: cover;
+}
+img {
+  width: 720px;
+  height: 300px;
+}
