@@ -22,9 +22,9 @@ public class UserLoginForm {
 	public void setUserPassword(String userPassword) {
 		this.userPassword = userPassword;
 	}
-	
 	@Override
 	public String toString() {
 		return "UserLoginForm [userEmail=" + userEmail + ", userPassword=" + userPassword + "]";
 	}
+	
 }
