@@ -25,8 +25,11 @@ public interface UserMapper {
 	/** メールアドレスとパスワードが一致するユーザー情報の取得 */
 	public User findByUser(@Param("email") String email, @Param("password") String password);
 	
+	/** メールアドレスが一致するユーザーの取得*/
+	public User findByEmail(@Param("email") String email);
+	
 	/** ユーザー情報の登録 */
-	public void insert(User user);
+	public void insertUser(User user);
 	
 	/** ユーザー情報の変更 */
 	public void update(User user);
