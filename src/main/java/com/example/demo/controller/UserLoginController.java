@@ -29,7 +29,7 @@ public class UserLoginController {
 	private UserLoginService userLoginService;
 	
 	@ModelAttribute
-	public UserLoginForm UserLoginSetUpForm() {
+	public UserLoginForm UserLoginForm() {
 		return new UserLoginForm();
 	}
 	
@@ -41,11 +41,6 @@ public class UserLoginController {
 	public String index() {
 		return "login";
 	}
-	
-	/////////////////////////////////////
-	//            ユーザー登録           //
-	/////////////////////////////////////
-
 	
 	/////////////////////////////////////
 	//             ログイン              //
@@ -61,7 +56,7 @@ public class UserLoginController {
 		User user = userLoginService.loginUser(form.getUserEmail(), form.getUserPassword());
 		
 		if (user == null) {
-			model.addAttribute("errorMessage","⚠︎メールアドレスまたはパスワードが不正です。");
+			model.addAttribute("errorMessage","EmailまたはPasswordが不正です");
 			return index();
 		}
 		
