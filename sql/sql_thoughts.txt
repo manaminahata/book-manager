@@ -6,8 +6,8 @@ create table thoughts (
 	thought_id integer auto_increment,
 	thought_text varchar(2000) not null,
 	thought_book_id integer not null,
-	primary key (thought_id),
 	deleted boolean NOT NULL default false,
+	primary key (thought_id),
 	foreign key (thought_id) references books (book_id)
 );
 
