@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.demo.repository.BookMapper">
+
+	<!-- booksテーブル -->
+	<resultMap type="com.example.demo.domain.Book" id="bookMapper">
+		<id property="bookId" column="book_id"/>
+		<result property="bookName" column="book_name"/>
+		<result property="bookCategory" column="book_category"/>
+		<result property="bookPrice" column="book_price"/>
+		<result property="bookPage" column="book_page"/>
+		<result property="bookCurrentPage" column="book_current_page"/>
+		<result property="bookImage" column="book_image"/>
+		<result property="deleted" column="deleted"/>
+		<collection property="bookThoughts" ofType="com.example.demo.domain.Thought">
+			<result property="thoughtId" column="thought_id"/>
+			<result property="thoughtText" column="thought_text"/>
+			<result property="thoughtBookId" column="thought_book_id"/>
+			<result property="deleted" column="deleted"/>
+		</collection>
+	</resultMap>
+	
+	<!-- 全件取得 -->
+	<select id="findAll" resultMap="bookMap">
+		SELECT
+			b.book_id,
+			b.book_name,
+			c.category_name,
+			b.book_price,
+			b.book_page,
+			b.book_current_page,
+			b.book_thoughts,
+			b.book_image,
+			b.deleted,
+			b.book_categoty,
+		FROM
+			books AS b
+		JOIN
+			categories AS c
+		ON
+			b.book_category = c.category_name;
+	</select>
+</mapper>
