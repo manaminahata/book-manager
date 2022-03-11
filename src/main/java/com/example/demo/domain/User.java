@@ -1,17 +1,18 @@
 package com.example.demo.domain;
 
 public class User {
-	private int userId;
+	
+	private Integer userId;
 	private String userName;
 	private String userEmail;
 	private String userPassword;
 	private String userIcon;
 	private Boolean deleted;
 	
-	public int getUserId() {
+	public Integer getUserId() {
 		return userId;
 	}
-	public void setUserId(int userId) {
+	public void setUserId(Integer userId) {
 		this.userId = userId;
 	}
 	public String getUserName() {
